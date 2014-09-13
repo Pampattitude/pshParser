@@ -1,7 +1,7 @@
 #include <cstdlib>
 #include <iostream>
 
-#include "Lexer.hpp"
+#include "Pamparser/Lexer.hpp"
 
 int	main(void) {
   bool	success = false;
@@ -22,7 +22,7 @@ int	main(void) {
       success = lexer.lexe("this is a 10 (simple) test 9lol");
     }
 
-    std::cout << std::endl << "=====" << std::endl << std::endl;
+    std::cout << std::endl << std::endl;
 
     {
       Pamparser::Lexer	lexer;
@@ -31,7 +31,6 @@ int	main(void) {
       lexer.addRule(Lex::Alphabet, ";");
       lexer.addRule(Lex::Dictionary, "&&");
       lexer.addRule(Lex::Dictionary, "||");
-      lexer.addRule(Lex::Alphabet, "&");
       lexer.addRule(Lex::Alphabet, "|");
       lexer.addRule(Lex::Alphabet, ">");
 
@@ -58,7 +57,7 @@ int	main(void) {
 
       lexer.addRule(Lex::Alphabet, " \t\r\n");
 
-      success = success && lexer.lexe("ls -laG 12 > file ;cat test||echo|cat -e&");
+      success = success && lexer.lexe("ls -laG 12 > file ;cat test||echo|cat -e");
     }
   }
   catch (std::exception const &e) {

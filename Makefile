@@ -2,7 +2,7 @@ PATH_BIN =	bin
 NAME =		parser
 
 SRC =		src/Main.cpp \
-		src/Lexer.cpp
+		src/Pamparser/Lexer.cpp
 OBJ =		$(SRC:.cpp=.o)
 
 CXX =		g++

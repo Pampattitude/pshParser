@@ -1,7 +1,7 @@
 #include <boost/lexical_cast.hpp>
 
-#include "Exception.hpp"
-#include "Lexer.hpp"
+#include "Pamparser/Exception.hpp"
+#include "Pamparser/Lexer.hpp"
 
 // TMP
 #include <iostream>
