@@ -2,7 +2,7 @@ PATH_BIN =	bin
 NAME =		parser
 
 SRC =		src/Main.cpp \
-		src/Parse.cpp
+		src/Lexer.cpp
 OBJ =		$(SRC:.cpp=.o)
 
 CXX =		g++
@@ -10,7 +10,7 @@ CXXFLAGS +=	-std=c++11
 CXXFLAGS +=	-Wall -Wextra
 CXXFLAGS +=	-I inc/
 
-LDFLAGS +=	-L /usr/lib -lboost_filesystem -lboost_system
+LDFLAGS +=	-L /usr/lib
 
 $(NAME):	$(OBJ)
 		@mkdir -p $(PATH_BIN)
