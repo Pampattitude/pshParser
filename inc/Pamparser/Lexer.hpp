@@ -18,6 +18,8 @@ namespace Pamparser {
     void	addRule(RuleType, char const *);
     void	addRule(RuleType, bool (*)(std::string const &));
 
+    ~Lexer();
+
   private:
     bool	matchesDictionary_(std::string const &, std::string const &) const;
     bool	matchesAlphabet_(std::string const &, std::string const &) const;

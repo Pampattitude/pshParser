@@ -139,4 +139,11 @@ namespace Pamparser {
   bool	Lexer::matchesFunction_(std::string const &input, bool (*fct)(std::string const &)) const {
     return (*fct)(input);
   }
+
+
+  Lexer::~Lexer() {
+    for (auto it = this->ruleList_.begin(), ite = this->ruleList_.end() ; ite != it ; ++it) {
+      delete *it;
+    }
+  }
 }
